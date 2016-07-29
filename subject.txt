@@ -1,0 +1,339 @@
+Details administratifs:
+
+- Aucune forme de communication n'est permise.
+
+	- Vous devez avoir votre carte d'etudiant. Vous devez la poser face visible
+	  sur votre table
+
+	- Ceci est un examen, il est interdit de discuter, ecouter de la musique,
+	  faire du bruit, ou de produire toute autres nuisances pouvant deranger les
+	  autres etudiants ou perturber le bon deroulement de l'examen
+
+	- Vos telephones portables doivent etre eteints.
+	
+	- Il faudra utiliser le sous-repertoire "rendu" a la racine du compte,
+	  il contiendra les repertoires aux noms demandes pour chaque
+	  exercice.
+
+	- Chaque exercice doit etre realise dans le repertoire correspondant au 
+	  nom indique dans l'en-tete de chaque exercice.
+
+	- Le repertoire "rendu", doit contenir un fichier nomme "auteur"
+	  comprenant :
+		le login (ex: jog) suivi d'un '\n'.
+	  ce qui doit donner:
+
+	  jog@neutron> cat -e ~/rendu/auteur
+	  jog$
+
+	- C'est un programme qui s'occupe du ramassage, respectez les noms,
+	  les chemins, les fichiers et les repertoires ...
+
+	- LES DROITS DE VOS FICHIERS N'ONT AUCUNE IMPORTANCE, VOUS N'AVEZ DONC
+	  PAS BESOIN DE LES CHANGER (SAUF SI ON VOUS LE DEMANDE DANS LE SUJET).
+
+	- En cas de probleme technique avec le sujet, on ne doit s'adresser qu'au
+	  surveillant uniquement.
+
+	- Tout materiel non explicitement autorise est strictement interdit.
+
+	- LES EXERCICES DOIVENT ETRE REALISES DANS L'ORDRE, la correction 
+	  de l'examen s'arretera des qu'un exercice sera considere comme faux.
+
+	- Toute sortie est definitive.
+
+
+Le Code :
+
+	- Des fonctions utiles sont parfois donnees dans le repertoire
+	  ~/sujet/misc
+
+	- Le releve du code est automatise, un programme testera le bon
+	  fonctionnement des exercices.
+
+	- Les fonctions autorisees sont indiquees dans l'en-tete de chaque 
+	  exercice. Vous pouvez recoder toutes les fonctions a votre guise.
+
+	- Toute fonction non autorisee explicitement est interdite.
+
+	- Vous avez le droit a des feuilles blanches et un stylo.
+
+	- Les exercices dit "subsidiaires" sont des exercices qui donnent des
+	  points si vous avez fait les exercices qui les precedent.
+
+	- Les exercices dit "bonus" sont des exercices qui donnent des points 
+	  supplementaires meme si vous ne faites pas les exercices qui les 
+	  precedent.
+
+	- Pour toute question apres l'examen, creez un ticket sur l'intra-bocal
+	  (http://intra-bocal.epitech.net), ou envoyez un mail a
+	  contact@staff.epita.fr
+
+
+ ----------******------------*****------------******------------*****----------
+
+
+------------------- ******** -------------------
+
+Exercice 1  : rotone
+________________________
+Nom de l'executable     :       rotone
+Nom du repertoire       :       ex_1
+Temps de realisation    :       15 minutes
+Language		:	C
+Fonction autorisee      :       my_putchar, my_putnbr, my_putstr, write
+Makefile		:	oui
+
+
+         Ecrire un programme qui prend en parametre une chaine de caracteres
+         et qui affiche cette chaine en remplacant chaque caractere
+         alphabetique par le caractere suivant dans l'ordre alphabetique.
+
+	 
+	 
+	 'z' devient 'a' et 'Z' devient 'A'.
+
+         Les majuscules restent des majuscules et les minuscules restent des
+         minuscules.
+
+         L'affichage se termine toujours par un '\n'.
+
+         Si aucun parametre n'est transmis, le programme affiche '\n'.
+
+
+
+exemple 1:
+> ./rotone "abc"
+bcd
+>
+
+exemple 2:
+> ./rotone "Eliminez le bingalow 505" | cat -e
+Fmjnjofa mf cjohbmpx 505$
+>
+
+exemple 3:
+> ./rotone " AkjhZ zLKIJz , 23y " | cat -e
+ BlkiA aMLJKa , 23z $
+>
+
+exemple 3:
+> ./rotone | cat -e
+$
+>
+
+
+------------------- ******** -------------------
+
+Exercice 2 : inter
+--------------------------
+Nom de l'executable  :          inter
+Nom du repertoire    :          ex_2
+temps de realisation :          30 minutes.
+Fonctions autorisees :          malloc, free.
+Makefile             :          oui
+
+
+        Ecrire un programme qui prend en parametre deux chaines de
+        caractere et qui affiche sans doublon les caracteres communs au deux
+	chaines.
+
+	L'affichage se fera dans l'ordre d'apparition dans la premiere chaine.
+	L'affichage doit etre suivi d'un '\n'.
+	
+	Si il n y a pas deux parametres le programme affiche '\n'.
+
+
+exemple 1:
+(jog@vault13) ./inter padinton "paqefwtdjetyiytjneytjoeyjnejeyj" | cat -e
+padinto$
+(jog@vault13)
+
+
+exemple 2:
+(jog@vault13) ./inter ddf6vewg64f gtwthgdwthdwfteewhrtag6h4ffdhsd | cat -e
+df6ewg4$
+(jog@vault13)
+
+
+exemple 3:
+(jog@vault13) ./inter "rien" "cette phrase ne cache rien" | cat -e
+rien$
+(jog@vault13)
+
+
+exemple 4:
+(jog@vault13) ./inter | cat -e
+$
+(jog@vault13)
+
+
+------------------- ******** -------------------
+
+Exercice 3 : ord_alphlong
+------------------------
+Nom de l'executable     :       ord_alphlong
+Nom du repertoire       :       ex_3
+temps de realisation    :       20 minutes.
+Fonction autorisee      :       my_putchar, my_putnbr, my_putstr, malloc, free, write
+Makefile		: 	oui
+
+
+
+        Ecrire un programme qui prend en parametre une chaine de caracteres
+        et qui affiche les mots de cette chaine par ordre de longueur puis
+        dans l'ordre ascii. Les majuscules et minuscules sont identiques dans 
+        l'ordre alphabetique (bien regarder les exemples). En cas d'egalite
+        alphabetique (ex aA et Aa) les mots doivent rester dans l'ordre
+        ou ils etaient dans la chaine d'origine (dernier exemple).
+
+        Si aucun parametre n'est transmis, ce programme renvoie '\n'.
+
+	Dans les chaines, il n'y aura que des espaces et des caracteres
+        alphanumeriques.
+        
+        Vous n'afficherez qu'un seul separateur entre les mots. Aucun
+        avant le premier ni apres le dernier de chaque ligne.
+
+
+exemple 1:
+(jog@almarita)./ord_alphlong "De son baton il frappa la pierre et l eau jaillit" | cat -e
+l$
+De et il la$
+eau son$
+baton$
+frappa pierre$
+jaillit$
+(jog@almarita)
+
+exemple 2:
+(jog@almarita)./ord_alphlong "A a b B cc ca cd" | cat -e
+A a b B$
+ca cc cd$
+(jog@almarita)
+
+
+------------------- ******** -------------------
+
+Exercice 4 : count_island
+------------------------
+Nom de l'executable     :       count_island
+Nom du repertoire       :       ex_4
+temps de realisation    :       30 minutes.
+Fonction autorisee      :       read, write, open, close, malloc, free
+Makefile		: 	oui
+
+
+
+        Le programme prend en parametre un fichier contenant une serie de
+	lignes de longueurs egales contenant soit le caractere '.' soit le
+	caractere 'X'. Ces lignes forment un rectangle de '.' comportant des
+	ilots de 'X'.
+	Une ligne est une suite de caracteres '.' et de caracteres 'X' qui se
+	termine par un '\n'. Les lignes font toutes la meme taille. La taille
+	maximum d'une ligne est 1024 caracteres.
+	Une colonne de caracteres est formee par l'ensemble des caracteres dans
+	un fichier qui sont separes par le meme nombre de caracteres du debut
+	de leur ligne respective.
+	On dit que deux caracteres se touchent s'ils sont :
+		- soit sur la meme ligne et contigus.
+		- soit sur la meme colone et sur des lignes contigues.
+	Un ilot de 'X' est forme par l'ensemble des caracteres qui se touchent.
+	Le programme doit parcourir le fichier ligne par ligne et l'afficher a
+	l'ecran en remplacant tous les 'X' des ilots par leur numero
+	d'apparition dans le fichier. Le programme devra effectue ce traitement
+	en commancant par le debut du fichier.
+	Il ne peut pas y avoir deux resultats differents pour un meme fichier.
+	Si le fichier est vide, qu'une erreur s'est produite ou que aucun
+	fichier n'est passe en parametre, le programme ecrit simplement le
+	caractere '\n' sur sa sortie standard.
+	Le fichier comporte au maximum 10 ilots.
+	Vous trouverez dans le repertoire misc des exemples de fichier.
+
+	Exemple 1:
+	Voici le contenu du fichier "toto".
+
+	.................XXXXXXXX..........................................
+	....................XXXXXXXXX.......XXXXXXXX.......................
+	.................XXXXXXXX..............XXX...XXXXX.................
+	.....................XXXXXX.....X...XXXXXXXXXXX....................
+	................................X..................................
+	......XXXXXXXXXXXXX.............X..................................
+	..................X.............XXXXXXXXX..........................
+	..................X.........XXXXXXXXXXXX...........................
+	..................X................................................
+	XX.............................................................XXXX
+	XX..................XXXXXXXXXXXXX.................................X
+	...................................................................
+	.................................................................X.
+	.....................XXXXX.......................................XX
+
+	(login@host)./count_island toto
+	.................00000000..........................................
+	....................000000000.......11111111.......................
+	.................00000000..............111...11111.................
+	.....................000000.....2...11111111111....................
+	................................2..................................
+	......3333333333333.............2..................................
+	..................3.............222222222..........................
+	..................3.........222222222222...........................
+	..................3................................................
+	44.............................................................5555
+	44..................6666666666666.................................5
+	...................................................................
+	.................................................................7.
+	.....................88888.......................................77
+	(login@host)
+
+	Exemple 2:
+	Voici le contenu du fichier "flop_aime".
+
+	...................................................................
+	...X........X.....XXXXX......XXXXXXX...XXXXXXXXXX..XXXXXXXXXX......
+	...XX......XX....XX...XX....XX.....XX.....XXXX.....XXXXXXXXXX......
+	...XXXX..XXXX...XX.....XX...XX.....XX......XX......XX..............
+	...XX.XXXX.XX...XX.....XX...XX.....XX......XX......XX..............
+	...XX...X..XX...XX.....XX...XXXXXXXX.......XX......XXXXX...........
+	...XX......XX...XXXXXXXXX...XXXX...........XX......XXXXX...........
+	...XX......XX..XX.......XX..XX.XX..........XX......XX..............
+	...XX......XX..XX.......XX..XX...X.........XX......XX..............
+	...XX......XX..XX.......XX..XX....X......XXXXXX....XXXXXXXXXX......
+	...XX......XX.XX.........XX.XX.....XX..XXXXXXXXXX..XXXXXXXXXX..X...
+	...................................................................
+
+	(login@host)./count_island flop_aime
+	...................................................................
+	...0........0.....11111......2222222...3333333333..4444444444......
+	...00......00....11...11....22.....22.....3333.....4444444444......
+	...0000..0000...11.....11...22.....22......33......44..............
+	...00.0000.00...11.....11...22.....22......33......44..............
+	...00...0..00...11.....11...22222222.......33......44444...........
+	...00......00...111111111...2222...........33......44444...........
+	...00......00..11.......11..22.22..........33......44..............
+	...00......00..11.......11..22...5.........33......44..............
+	...00......00..11.......11..22....6......333333....4444444444......
+	...00......00.11.........11.22.....77..3333333333..4444444444..8...
+	...................................................................
+	(login@host)
+
+	Exemple 3:
+	Voici le contenu du fichier "titi"
+
+	..X.......
+	...X.X....
+	....XX.XX.
+	.X..XX....
+	.X..X...X.
+
+	(login@host)./count_island titi | cat -e
+	..0.......$
+	...1.2....$
+	....22.33.$
+	.4..22....$
+	.4..2...5.$
+	(login@host)
+
+	Exemple 4:
+	(login@host)./count_island | cat -e
+	$
+	(login@host)

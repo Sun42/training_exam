@@ -1,0 +1,253 @@
+Details administratifs:
+
+- Aucune forme de communication n'est permise.
+
+        - Vous devez avoir votre carte d'etudiant. Vous devez la poser face visible
+          sur votre table
+
+        - Ceci est un examen, il est interdit de discuter, ecouter de la musique,
+          faire du bruit, ou de produire toute autres nuisances pouvant deranger les
+          autres etudiants ou perturber le bon deroulement de l'examen
+
+        - Vos telephones portables doivent etre eteints.
+
+        - Il faudra utiliser le sous-repertoire "rendu" a la racine du compte,
+          il contiendra les repertoires aux noms demandes pour chaque
+          exercice.
+
+        - Chaque exercice doit etre realise dans le repertoire correspondant au
+          nom indique dans l'en-tete de chaque exercice.
+
+        - Le repertoire "rendu", doit contenir un fichier nomme "auteur"
+          comprenant :
+                le login (ex: jog) suivi d'un '\n'.
+          ce qui doit donner:
+
+          jog@neutron> cat -e ~/rendu/auteur
+          jog$
+
+        - C'est un programme qui s'occupe du ramassage, respectez les noms,
+          les chemins, les fichiers et les repertoires ...
+
+        - LES DROITS DE VOS FICHIERS N'ONT AUCUNE IMPORTANCE, VOUS N'AVEZ DONC
+          PAS BESOIN DE LES CHANGER (SAUF SI ON VOUS LE DEMANDE DANS LE SUJET).
+
+        - En cas de probleme technique avec le sujet, on ne doit s'adresser qu'au
+          surveillant uniquement.
+
+        - Tout materiel non explicitement autorise est strictement interdit.
+
+        - LES EXERCICES DOIVENT ETRE REALISES DANS L'ORDRE, la correction
+          de l'examen s'arretera des qu'un exercice sera considere comme faux.
+
+        - Toute sortie est definitive.
+
+
+Le Code :
+
+        - Des fonctions utiles sont parfois donnees dans le repertoire
+          ~/sujet/misc
+
+        - Le releve du code est automatise, un programme testera le bon
+          fonctionnement des exercices.
+
+        - Les fonctions autorisees sont indiquees dans l'en-tete de chaque
+          exercice. Vous pouvez recoder toutes les fonctions a votre guise.
+
+        - Toute fonction non autorisee explicitement est interdite.
+
+        - Vous avez le droit a des feuilles blanches et un stylo.
+
+        - Les exercices dit "subsidiaires" sont des exercices qui donnent des
+          points si vous avez fait les exercices qui les precedent.
+
+        - Les exercices dit "bonus" sont des exercices qui donnent des points
+          supplementaires meme si vous ne faites pas les exercices qui les
+          precedent.
+
+        - Pour toute question apres l'examen, creez un ticket sur l'intra-bocal
+          (http://intra-bocal.epitech.net), ou envoyez un mail a
+          contact@staff.epita.fr
+
+
+ ----------******------------*****------------******------------*****----------
+
+
+------------------- ******** -------------------
+
+Exercice 1  : half_str
+________________________
+Nom de l'executable     :       half_str
+Nom du repertoire       :       ex_1
+Temps de realisation    :       15 minutes
+Language                :       C
+Fonction autorisee      :       my_putchar, my_strlen, my_putstr, write
+Makefile                :       obligatoire
+
+
+         Ecrire un programme qui prend en parametre une ou plusieurs chaines
+         de caracteres et qui affiche chaque chaine un caractere sur deux.
+
+         Si plusieurs chaines sont passees en parametres, le programme
+         affiche '\n' apres chaque chaine.
+
+         L'affichage se termine toujours par un '\n'.
+
+         Si aucun parametre n'est transmis, le programme affiche '\n'.
+
+
+
+exemple 1:
+> ./half_str "abc"
+ac
+>
+
+exemple 2:
+> ./half_str "test de phrase" "deuxieme test" "un avant dernier test" "" "enfin c'est finis" | cat -e
+ts eprs$
+duim et$
+u vn ene et$
+$
+efncetfns$
+>
+
+exemple 3:
+> ./half_str "a btcfdceqf gehdiajikhllmgnaovpyqer srttuuvawcxayaz" "142637415869728395" "          " "Baodnxnce   cshja4nycrew qaq dtdoduqsq" | cat -e
+abcdefghijklmnopqrstuvwxyz$
+123456789$
+     $
+Bonne chance a tous$
+>
+
+exemple 3:
+> ./half_str | cat -e
+$
+>
+
+
+------------------- ******** -------------------
+
+Exercice 2 : inter
+--------------------------
+Nom de l'executable  :          inter
+Nom du repertoire    :          ex_2
+temps de realisation :          30 minutes.
+Fonctions autorisees :          malloc, free.
+Makefile             :          oui
+
+
+        Ecrire un programme qui prend en parametre deux chaines de
+        caractere et qui affiche sans doublon les caracteres communs au deux
+        chaines.
+
+        L'affichage se fera dans l'ordre d'apparition dans la premiere chaine.
+        L'affichage doit etre suivi d'un '\n'.
+
+        Si il n y a pas deux parametres le programme affiche '\n'.
+
+
+exemple 1:
+(jog@vault13) ./inter padinton "paqefwtdjetyiytjneytjoeyjnejeyj" | cat -e
+padinto$
+(jog@vault13)
+
+
+exemple 2:
+(jog@vault13) ./inter ddf6vewg64f gtwthgdwthdwfteewhrtag6h4ffdhsd | cat -e
+df6ewg4$
+(jog@vault13)
+
+
+exemple 3:
+(jog@vault13) ./inter "rien" "cette phrase ne cache rien" | cat -e
+rien$
+(jog@vault13)
+
+
+exemple 4:
+(jog@vault13) ./inter | cat -e
+$
+(jog@vault13)
+
+
+------------------- ******** -------------------
+
+Exercice 3 : infin_add
+_______________________
+Nom de l'executable  :          infin_add
+Nom du repertoire    :          ex_3
+Temps de realisation :          30 minutes.
+Fonction autorisee   :          malloc, free, my_putstr, my_putchar, write
+Makefile             :          oui
+Langage              :          C
+
+
+         Il s'agit de realiser un programme qui effectue une addition
+         infinie. Ce programme prend en parametre deux chaines de carateres
+         et ecrit une chaine de caractere qui est le resultat de l'operation
+         en sortie standard.
+
+         Il y a deux chaines passees en parametre.
+         Ces trois chaines sont des nombres, la chaine affichee est le resultat
+         de l'addition entre les deux chaines.
+         Le resultat sera suivi d'un '\n'.
+         Les nombres negatifs doivent etre precedes du signe "-".
+         Le resultat doit etre affiche sans espace. Aucun zero ne doit
+         preceder le nombre affiche.
+
+         Un nombre negatif doit etre precede d'un et d'un seul signe.
+
+         Tous les parametres seront bien formates.
+
+
+
+exemple 1:
+> ./infin_add "879879087" "67548976597" | cat -e
+68428855684$
+>
+
+
+
+exemple 2:
+> ./infin_add "-876435" "987143265" | cat -e
+986266830$
+>
+
+exemple 3
+> ./infin_add "-807965" "-34532" | cat -e
+-842497
+>
+
+
+------------------- ******** -------------------
+
+Exercice 4  : my_id
+________________________
+Nom des fichiers        :       my_id
+Nom du repertoire       :       ex_4
+Temps de realisation    :       15 minutes.
+Languages               :       C
+Fonctions autorisees    :       toutes sauf l'utilisation sauf system, exec*, et du binaire "id"
+                                de facon direct ou indirect
+Makefile                :       oui
+
+
+
+        Vous devez ecrire un programme qui prend en argument un uid ou un
+        login, et renvoie EXACTEMENT, au caractere pret, la meme chose que la commande id.
+        Vous ne denvez pas gerer les options.
+
+exemple 1:
+(jog@almarita)./my_id anonymous
+uid=3092(anonymous) gid=7000(ext) groups=7000(ext)$
+(jog@almarita)
+
+exemple 2:
+(jog@almarita)./my_id | cat -e
+uid=4200(jog) gid=4200(bocal) groups=4200(bocal)$
+(jog@almarita)
+
+exemple 3:
+(jog@almarita)./my_id 0 | cat -e
+uid=0(root) gid=0(wheel) groups=0(wheel), 5(operator)$
+(jog@almarita)
